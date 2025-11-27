@@ -1,0 +1,721 @@
+@charset "UTF-8";
+/* DOCUMENTO CSS PRINCIPAL                    */
+/* Desarrollado para: CPA VISION              */
+/* Producto: Sistema EDR                      */
+/* Autor: edr Bermudez                       */
+/* Fecha: ENERO 2024                          */
+/* -- TABLA DE CONTENIDOS ------------------------
+*     1. TIPOGRAFIAS       
+*     2. VARIABLES ROOT
+*     3. PLANTILLA
+----------------------------------------------- */
+/* ########## 2. VARIABLES ROOT ########## */
+:root {
+  /* ---------- FONTS ---------- */
+  --edr-font-body: "PT Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  /* ---------- COLORS ---------- */
+  --edr-color-text-primary-primary: #0f172a;
+  --edr-color-text-secondary: #334155;
+  --edr-color-text-tertiary: #64748b;
+  --edr-color-text-muted: #cbd5e1;
+  --edr-color-bg: white;
+  --edr-color-bg-alt: #f8fafc;
+  --edr-color-border: #e2e8f0;
+  --edr-color-primary: #4f46e5;
+  --edr-color-primary-alt: #3730a3;
+  --edr-color-primary-100: #d2d0f8;
+  --edr-color-secondary: #0284c7;
+  --edr-color-secondary-alt: #075985;
+  --edr-color-code: #c74502;
+}
+
+/* ########## 3. VARIABLES SCSS ########## */
+/* ---------- COLORS ---------- */
+/* ########## 4. PLANTILLA ########## */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--edr-font-body);
+  line-height: 1.15;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.body-edr {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  background-color: var(--edr-color-bg);
+}
+
+.edr-font {
+  font-family: var(--edr-font-body);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.edr-font-class {
+  font-family: var(--edr-font-body);
+  font-size: 1.125rem !important;
+  font-weight: 300 !important;
+  font-style: italic !important;
+  color: var(--edr-color-primary-alt);
+}
+
+.edr-code {
+  color: var(--edr-color-code);
+}
+
+h1.h1-edr {
+  font-family: var(--edr-font-body) !important;
+  color: var(--edr-color-primary) !important;
+  font-weight: 600 !important;
+  font-size: 2rem !important;
+  line-height: 1 !important;
+  margin: 0;
+}
+
+.h3-edr {
+  font-family: var(--edr-font-body) !important;
+  color: var(--edr-color-secondary) !important;
+  font-weight: 600 !important;
+  font-size: 1.625rem !important;
+  line-height: 1 !important;
+}
+
+.h4-edr {
+  font-family: var(--edr-font-body) !important;
+  color: var(--edr-color-primary-alt) !important;
+  font-weight: 500 !important;
+  font-size: 1.25rem !important;
+  line-height: 1 !important;
+}
+
+#edr-logo {
+  width: 200px;
+  padding: 0 !important;
+}
+#edr-logo img {
+  height: 50px;
+  width: auto;
+}
+
+.edr-header {
+  background-color: var(--edr-color-bg);
+  padding: 0 !important;
+}
+.edr-header > .navbar {
+  box-shadow: 0 0 30px rgba(28, 39, 60, 0.08);
+  border-bottom: 1px solid var(--edr-color-border);
+}
+.edr-header > .navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ========================================
+   MENÚ SUPERIOR DE NAVEGACIÓN PRINCIPAL
+   ========================================
+   Clase: .edr-top-nav
+   Descripción: Menú horizontal en el header para navegación entre secciones principales
+   Uso: Contiene enlaces (.edr-top-nav-link) que cambian de página
+   Estados: .active para la página actual
+*/
+.edr-top-nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.edr-top-nav .edr-top-nav-link {
+  font-family: var(--edr-font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--edr-color-text-secondary);
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+}
+.edr-top-nav .edr-top-nav-link:hover {
+  color: var(--edr-color-primary);
+  background-color: var(--edr-color-bg-alt);
+}
+.edr-top-nav .edr-top-nav-link.active {
+  color: var(--edr-color-primary);
+  font-weight: 600;
+  background-color: var(--edr-color-primary-100);
+}
+
+/* ========================================
+   CONTENEDOR PARA PÁGINAS SIN MENÚ LATERAL
+   ========================================
+   Clase: .edr-content-full
+   Descripción: Contenedor de ancho completo para páginas sin navegación lateral
+   Uso: Página de inicio y páginas informativas sin secciones internas
+*/
+.edr-content-full {
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.edr-container-menu {
+  display: block;
+  width: 220px;
+  border-right: 1px solid var(--edr-color-border);
+  font-family: var(--edr-font-body);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 0.75rem 0.75rem 0.75rem 0;
+}
+.edr-container-menu .component-item label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--edr-color-text-primary-primary);
+}
+.edr-container-menu .component-item label ~ label {
+  margin-top: 30px;
+}
+.edr-container-menu .component-item .nav-link {
+  padding: 0;
+  display: block;
+  color: var(--edr-color-text-secondary);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  background: none;
+  border: 0;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.edr-container-menu .component-item .nav-link + .nav-link {
+  padding-top: 0.375rem;
+}
+.edr-container-menu .component-item .nav-link:hover {
+  color: var(--edr-color-primary-alt);
+  text-decoration: none;
+}
+.edr-container-menu .component-item .nav-link.active {
+  color: var(--edr-color-primary);
+  font-weight: 500;
+}
+
+/* ========================================
+   MENÚ LATERAL TIPO SCROLLSPY
+   ========================================
+   Clase: .edr-container-menu-spy
+   Descripción: Menú lateral que se activa automáticamente según la sección visible en scroll
+   Uso: Para páginas con múltiples secciones internas (AI Studio, Elementos UI)
+   Comportamiento: 
+   - Se mantiene fijo (sticky) al hacer scroll
+   - Los enlaces se activan automáticamente con Bootstrap ScrollSpy
+   - No cambia de página, navega dentro de la misma página con anclas (#seccion)
+   Estados: .active se aplica automáticamente por Bootstrap al hacer scroll
+*/
+.edr-container-menu-spy {
+  display: block;
+  width: 220px;
+  border-right: 1px solid var(--edr-color-border);
+  font-family: var(--edr-font-body);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 1.5rem 0.75rem 0.75rem 0;
+  position: sticky;
+  top: 0;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+.edr-container-menu-spy .nav-link {
+  padding: 0.5rem 0.75rem;
+  display: block;
+  color: var(--edr-color-text-secondary);
+  font-size: 0.875rem;
+  font-weight: 400;
+  background: none;
+  border: 0;
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.edr-container-menu-spy .nav-link:hover {
+  color: var(--edr-color-primary-alt);
+  background-color: var(--edr-color-bg-alt);
+  border-left-color: var(--edr-color-primary-alt);
+}
+.edr-container-menu-spy .nav-link.active {
+  color: var(--edr-color-primary);
+  font-weight: 600;
+  background-color: var(--edr-color-primary-100);
+  border-left-color: var(--edr-color-primary);
+}
+
+/* ========================================
+   CONTENEDOR DE CONTENIDO CON SCROLLSPY
+   ========================================
+   Clase: .edr-scrollspy-content
+   Descripción: Contenedor principal para contenido con navegación ScrollSpy
+   Uso: Envuelve las secciones que serán detectadas por el menú lateral
+   Nota: Las secciones deben tener IDs que coincidan con los href del menú
+*/
+.edr-scrollspy-content {
+  scroll-behavior: smooth;
+}
+.edr-scrollspy-content section {
+  scroll-margin-top: 100px;
+}
+
+.edr-btn-copy {
+  position: relative;
+  overflow: hidden;
+  width: 240px;
+  padding: 0.375rem !important;
+  color: var(--edr-color-primary);
+  background-color: var(--edr-color-bg-alt);
+  border: 1px solid var(--edr-color-primary);
+  border-left: 6px solid var(--edr-color-primary);
+  border-radius: 4px !important;
+  background: linear-gradient(to left, var(--edr-color-bg-alt) 50%, var(--edr-color-primary) 50%) right;
+  background-size: 200%;
+  transition: 0.5s ease-out;
+}
+.edr-btn-copy .btn-icon img {
+  height: 1rem;
+  width: auto;
+  display: inline-block;
+  transition: transform 0.18s ease, opacity 0.2s ease;
+}
+.edr-btn-copy:hover, .edr-btn-copy:focus, .edr-btn-copy:active {
+  background-color: var(--edr-color-bg-alt);
+  border: 1px solid var(--edr-color-primary);
+  border-left: 6px solid var(--edr-color-primary);
+}
+.edr-btn-copy.copied {
+  color: var(--edr-color-bg-alt) !important;
+  background-position: left;
+}
+
+.edr-breadcrumb {
+  font-family: var(--edr-font-body);
+  --bs-breadcrumb-divider: ">";
+  display: flex;
+  align-items: center;
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--edr-color-text-secondary);
+  margin-bottom: 0.25rem;
+}
+.edr-breadcrumb > .breadcrumb {
+  --bs-breadcrumb-margin-bottom: 0;
+}
+
+.edr-example {
+  background-color: var(--edr-color-bg);
+  border: 1px solid var(--edr-color-border);
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+.edr-example .edr-example-v {
+  padding: 0.75rem;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+.edr-example .edr-example-h {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--edr-color-primary-alt);
+  background-color: var(--edr-color-bg-alt);
+  padding: 0;
+  border-top: 1px solid var(--edr-color-border);
+  border-bottom: 1px solid var(--edr-color-border);
+  display: flex;
+  align-items: center;
+}
+.edr-example .edr-example-c pre {
+  margin-bottom: 0;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+.edr-example .copy-icon-btn {
+  color: var(--edr-color-primary-alt) !important;
+  background-color: var(--edr-color-primary-100) !important;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  margin-right: 0.5rem;
+}
+.edr-example .copy-icon-btn span {
+  font-size: 1.25rem !important;
+}
+.edr-example .copy-icon-btn.copied {
+  color: var(--edr-color-bg) !important;
+  background-color: var(--edr-color-secondary) !important;
+}
+
+pre {
+  padding: 0.75rem;
+}
+
+.btn-download {
+  padding: 0.375rem !important;
+  color: var(--edr-color-primary);
+  background-color: var(--edr-color-bg-alt);
+  border: 1px solid var(--edr-color-primary);
+  border-left: 6px solid var(--edr-color-primary);
+  border-radius: 4px !important;
+  height: 70%;
+  width: 90%;
+  vertical-align: middle;
+  background: linear-gradient(to left, var(--edr-color-bg-alt) 50%, var(--edr-color-primary) 50%) right;
+  background-size: 200%;
+  transition: 0.5s ease-out;
+}
+.btn-download:hover {
+  color: var(--edr-color-bg-alt) !important;
+  background-position: left;
+  border: 1px solid var(--edr-color-primary);
+  border-left: 6px solid var(--edr-color-primary);
+  text-decoration: none;
+}
+
+/*
+ * ==========================================================
+ * 6. FORMULARIOS
+ * ==========================================================
+ */
+/* ========================================
+   RESUMEN DE NAVEGACIÓN DEL SITIO
+   ========================================
+
+   ESTRUCTURA DE NAVEGACIÓN:
+
+   1. MENÚ SUPERIOR (.edr-top-nav)
+      - Navegación principal entre páginas
+      - 3 secciones: Inicio, AI Studio, Elementos UI
+      - Enlaces cambian de página completa
+
+   2. LAYOUTS DISPONIBLES:
+
+      a) LayoutHome (sin menú lateral)
+         - Usado en: Página de Inicio
+         - Contenido centrado con .edr-content-full
+         - Sin navegación lateral
+
+      b) LayoutScrollSpy (con menú lateral ScrollSpy)
+         - Usado en: AI Studio, Elementos UI
+         - Menú lateral con .edr-container-menu-spy
+         - Navegación interna con anclas (#seccion)
+         - Se activa automáticamente al hacer scroll
+         - No cambia de página, solo navega dentro de la misma
+
+   3. FUNCIONAMIENTO SCROLLSPY:
+      - Requiere data-bs-spy="scroll" en <body>
+      - Las secciones deben tener IDs únicos
+      - Los enlaces del menú apuntan a esos IDs (#id)
+      - Bootstrap detecta automáticamente la sección visible
+      - Aplica clase .active al enlace correspondiente
+
+   ======================================== */
+/* ========================================
+   PÁGINA DE INICIO - HERO Y SECCIONES
+   ======================================== */
+/* Hero Section - Sección principal de bienvenida */
+.edr-hero {
+  text-align: center;
+  padding: 2rem 0 2rem;
+  margin-bottom: 2rem;
+}
+.edr-hero .edr-hero-title {
+  font-family: var(--edr-font-body);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--edr-color-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+.edr-hero .edr-hero-subtitle {
+  font-family: var(--edr-font-body);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--edr-color-secondary);
+  margin-bottom: 1.5rem;
+}
+.edr-hero .edr-hero-description {
+  font-family: var(--edr-font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--edr-color-text-secondary);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Títulos de sección */
+.edr-section-title {
+  font-family: var(--edr-font-body);
+  font-size: 1.625rem;
+  font-weight: 600;
+  color: var(--edr-color-primary);
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+/* ========================================
+   CARDS DE PILARES (UI/UX y Datos)
+   ======================================== */
+.edr-pillar-card {
+  background-color: var(--edr-color-bg);
+  border: 1px solid var(--edr-color-border);
+  border-left: 4px solid var(--edr-color-primary);
+  border-radius: 0.25rem;
+  padding: 1.5rem;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+.edr-pillar-card:hover {
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+  transform: translateY(-2px);
+}
+.edr-pillar-card .edr-pillar-title {
+  font-family: var(--edr-font-body);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--edr-color-primary-alt);
+  margin-bottom: 0.5rem;
+}
+.edr-pillar-card .edr-pillar-subtitle {
+  font-family: var(--edr-font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--edr-color-secondary);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+/* ========================================
+   STAKEHOLDERS - Lista de áreas
+   ======================================== */
+.edr-stakeholders {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+.edr-stakeholders .edr-stakeholder-item {
+  background-color: var(--edr-color-bg-alt);
+  border-radius: 0.25rem;
+  padding: 1.25rem;
+  border-left: 3px solid var(--edr-color-secondary);
+  transition: all 0.2s ease;
+}
+.edr-stakeholders .edr-stakeholder-item:hover {
+  background-color: var(--edr-color-bg);
+  border-left-color: var(--edr-color-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.edr-stakeholders .edr-stakeholder-item .edr-stakeholder-title {
+  font-family: var(--edr-font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--edr-color-text-primary-primary);
+  margin-bottom: 0.625rem;
+}
+
+/* ========================================
+   CARDS DE IMPACTO - Métricas KPI
+   ======================================== */
+.edr-impact-card {
+  background: linear-gradient(135deg, var(--edr-color-bg) 0%, var(--edr-color-bg-alt) 100%);
+  border: 1px solid var(--edr-color-border);
+  border-radius: 0.25rem;
+  padding: 1.75rem;
+  text-align: center;
+  height: 100%;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.edr-impact-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--edr-color-primary) 0%, var(--edr-color-secondary) 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.edr-impact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.2);
+  border-color: var(--edr-color-primary);
+}
+.edr-impact-card:hover::before {
+  transform: scaleX(1);
+}
+.edr-impact-card:hover .edr-impact-percentage {
+  transform: scale(1.1);
+  color: var(--edr-color-primary);
+}
+.edr-impact-card .edr-impact-percentage {
+  font-family: var(--edr-font-body);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--edr-color-secondary);
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  display: block;
+}
+.edr-impact-card .edr-impact-title {
+  font-family: var(--edr-font-body);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--edr-color-text-primary-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+/* ========================================
+   CARDS DE ACCIÓN - AI STUDIO
+   ======================================== */
+/* Clase: .edr-action-card
+   Descripción: Card interactiva para acciones principales (copiar, descargar, ver video)
+   Uso: Botones o enlaces que ejecutan acciones importantes
+   Estados: hover con elevación y cambio de color, .edr-action-card-success para estado de éxito
+*/
+.edr-action-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: var(--edr-color-bg);
+  border: 2px solid var(--edr-color-border);
+  border-radius: 0.25rem;
+  text-decoration: none;
+  color: var(--edr-color-text-primary-primary);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+  min-height: 160px;
+}
+.edr-action-card:hover {
+  border-color: var(--edr-color-primary);
+  background-color: var(--edr-color-primary-100);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(79, 70, 229, 0.2);
+  color: var(--edr-color-primary-alt);
+  text-decoration: none;
+}
+.edr-action-card.edr-action-card-success {
+  border-color: #10b981;
+  background-color: #d1fae5;
+}
+.edr-action-card.edr-action-card-success .edr-action-icon {
+  color: #10b981;
+}
+.edr-action-card .edr-action-icon {
+  font-size: 48px;
+  color: var(--edr-color-primary);
+  margin-bottom: 0.75rem;
+  transition: all 0.3s ease;
+}
+.edr-action-card .edr-action-title {
+  font-family: var(--edr-font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--edr-color-text-primary-primary);
+  margin-bottom: 0.25rem;
+  display: block;
+}
+.edr-action-card .edr-action-desc {
+  font-family: var(--edr-font-body);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--edr-color-text-tertiary);
+  display: block;
+}
+
+/* Clase: .edr-info-card
+   Descripción: Card informativa con instrucciones o tips
+   Uso: Mostrar información complementaria sin interacción
+*/
+.edr-info-card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: var(--edr-color-bg-alt);
+  border: 2px solid var(--edr-color-border);
+  border-left: 4px solid var(--edr-color-secondary);
+  border-radius: 0.25rem;
+  height: 100%;
+  min-height: 160px;
+}
+.edr-info-card .edr-info-icon {
+  font-size: 32px;
+  color: var(--edr-color-secondary);
+  margin-bottom: 0.75rem;
+}
+.edr-info-card p {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Clase: .edr-download-card
+   Descripción: Card horizontal para mostrar opción de descarga de archivos
+   Uso: Alternativa visual para descargas con botón destacado
+*/
+.edr-download-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  background-color: var(--edr-color-bg-alt);
+  border: 2px solid var(--edr-color-border);
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+}
+.edr-download-card:hover {
+  border-color: var(--edr-color-primary);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.1);
+}
+.edr-download-card .edr-download-icon {
+  font-size: 48px;
+  color: var(--edr-color-primary);
+  flex-shrink: 0;
+}
+.edr-download-card .edr-download-content {
+  flex-grow: 1;
+}
+.edr-download-card .edr-download-content .edr-download-title {
+  font-family: var(--edr-font-body);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--edr-color-text-primary-primary);
+  margin-bottom: 0.25rem;
+}
+.edr-download-card .edr-download-content p {
+  color: var(--edr-color-text-tertiary);
+  margin-bottom: 0;
+}
+.edr-download-card .btn {
+  flex-shrink: 0;
+}
